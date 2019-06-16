@@ -1,0 +1,203 @@
+@charset "UTF-8";
+/* CSS Document */
+	
+		body {
+			background-color:grey;
+			margin:0px;
+			padding:0px;
+			height:100%;
+			width:100%;
+		}
+
+		/***************************************/
+		/***************************************/
+		.header {
+			background-image: linear-gradient(to bottom, black, #2d2429, black, black);
+			height:auto; 
+			width:auto;
+		}
+	
+		/***************************************/
+		/***************************************/
+		
+		.footer {
+			height:50px;
+			position:fixed;
+			bottom:0;
+			left:0;
+			right:0;
+			background-image: linear-gradient(to bottom, #2d2429,#2d2419, #2d2419,black);
+			color: white;
+			font-family: Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", "serif";
+			text-align: center
+		}
+			
+
+		/***********************************************************************/	
+		/****************NAVIGATION SETTINGS DO NOT CHANGE***********************/
+		/***********************************************************************/
+
+
+
+		/*--Strip the ul of the padding and list styling--*/
+		ul {
+			list-style-type:none; /*removed the bulletins*/
+			margin:0;/*removed margin so the top and collapse to he header*/
+			padding:0;/*removed the so the menu collapes to the left.*/
+			text-align: center;	
+		}
+		
+		/*--Create a horizontal list with spacing, automatically updates the menu*/
+		.navMenu {
+			display:inline-block;		
+			/*float:left; /*menu starts at the left and move right*/
+			margin-right:-2px;/*put spaces between the menu buttons*/
+			
+		}
+		
+		/*--Style for menu links--*/
+		
+		.navMenu a {
+			
+  			display:block;
+			min-width:75px;
+			height:25px;
+  			color: black;
+  			text-align:center;
+			line-height: 30px;
+  			padding: 10px 15px;
+  			text-decoration: none;
+			font-family:Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", "serif";
+ 			font-size: 20px;
+			font-style: italic;
+			background:#DAB87F;
+			box-shadow:  5px 7px black;
+		}
+		
+		/*--Hover state for top level links*/
+		.navMenu:hover a{
+			text-align: center;
+ 			background-color: black;
+  			color: #DAB87F;
+			box-shadow:  5px 7px #DAB87F;
+			
+		}
+		
+
+		/***************************************/
+		/***************************************/
+
+		/*--Style for dropdown links*/
+		.navMenu:hover ul a{
+			background:#D9BE8B;
+			color: black;
+			height:25px;
+			line-height:30px;
+			text-align: left;
+			width:200px;
+			box-shadow:  5px 7px black;
+		}
+		
+		/*--Hover state for dropdown links*/
+		.navMenu:hover ul a:hover{
+			background:#DAB87F;
+			color:black;
+		}
+		
+		/*--hide drop down list until they are needed*/
+		.navMenu ul {
+			
+			display:none;	
+		}
+		
+		/*Make drop down links vertical*/
+		.navMenu ul li {
+			display:block;
+			float:none;
+			height: auto;
+		
+		}
+	
+		/*Prevent text wraping*/
+		.navMenu ul li a{
+			width:auto;
+			min-width:100px;
+			padding:10px 20px;
+		}
+		/*Display the drop down on hover*/
+		ul li a:hover+ .hidden, .hidden:hover {
+			display:block;
+			position:absolute;
+			
+		}
+
+
+		/*Style 'show menu' label button and hide it by default*/
+		.show-menu {
+    		font-family: Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", "serif";
+			font-style:italic;
+			font-size: 20px;
+    		text-decoration: none;
+    		color: black;
+    		background: #DAB87F;
+    		text-align: center;
+    		padding: 10px 0;
+    		display: none;
+			margin:0;
+		}
+		/*Hide checkbox*/
+		input[type=checkbox]{
+    	display: none;
+		}
+		/*Show menu when invisible checkbox is checked*/
+		input[type=checkbox]:checked ~ #menu{
+  		  display: block;
+}
+		
+		/***************************************/
+		/***************************************/
+
+		@media screen and (max-width:900px) {
+		
+			ul {
+				position: static;
+				display:none;	
+			}
+			ul li, li a {
+				width:100%;
+				display:block;
+			}
+			.navMenu:hover ul a{
+				width:100%;	
+				text-align:left;
+				display: none;
+			}
+			
+			/*Display 'show menu' link*/
+    		.show-menu {
+        		display:block;
+    		}
+			.navMenu a{
+				text-align: center;
+				margin:0px;
+				padding:0px;
+			}
+			.navMenu:hover a {
+				text-align: center;
+				margin:0px;
+				padding:0px;
+			}
+			
+			
+		}
+
+		/***************************************/
+		/***************************************/
+		
+		/**Make link for curent page highlighted**/
+	
+	li a.current {
+		background-color:#2d2429;
+		color:#DAB87F;
+		
+	}	
